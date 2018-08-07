@@ -7,9 +7,10 @@
 
 ### Project overview
 
-In this project, a simulated 6-DOF (degrees of freedom) Robotic Arm has been programmed to pick up objects present on a shelf and place it in a bucket, making use of Forward & Inverse Kinematics.
+In this project, a Robotic Arm having 6 degrees of freedom (DOF) has been simulated and programmed using ROS (Robot Operating System) to pick up objects present on a shelf and place them in a bucket, making use of Forward & Inverse Kinematics (Denavit-Hartenberg method).
 
 **Project tools:**
+ - **ROS (Robot Operating System)** : Robotics middleware (i.e. collection of software frameworks for robot software development)
  - **Gazebo** : A physics based 3D simulator
  - **RViz** : A 3D visualizer for sensor data analysis, and robot state visualization
  - **Moveit!** : A ROS based software framework for motion planning, kinematics and robot control
