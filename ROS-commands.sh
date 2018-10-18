@@ -56,10 +56,46 @@ rosparam set /arm_mover/max_joint_2_angle 1.57
 roslaunch kuka_arm forward_kinematics.launch
 
 
-###################
-# Launch project
-###################
+##################################
+# Launch Kinematics project
+##################################
 
 cd ~/catkin_ws/src/RoboND-Kinematics-Project/kuka_arm/scripts
 ./safe_spawner.sh
 rosrun kuka_arm IK_server.py
+
+
+
+#################################
+# Segmentation Mini Project
+#################################
+roslaunch sensor_stick robot_spawn.launch
+
+
+
+###################################
+# Object Recognition Mini Project
+###################################
+cd ~/catkin_ws
+roslaunch sensor_stick training.launch
+rosrun sensor_stick capture_features.py
+# After the above completes, execute the following : 
+rosrun sensor_stick train_svm.py
+
+roslaunch sensor_stick robot_spawn.launch
+./object_recognition.py
+
+
+
+##############################################
+# Perception Project
+##############################################
+
+# Run DEMO
+cd ~/catkin_ws/src/RoboND-Perception-Project/pr2_robot/scripts
+./pr2_safe_spawner.sh
+
+# Run actual project
+roslaunch pr2_robot pick_place_project.launch
+cd /home/robond/catkin_ws/src/RoboND-Perception-Project/pr2_robot/scripts
+./pick_place_project.py 
